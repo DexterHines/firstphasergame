@@ -10,6 +10,8 @@ var player;
 var stars;
 var cursors;
 var explosion;
+var explosion2;
+var explosion3;
 
 function preload() {
     game.load.image('sky', 'assets/sky.png');
@@ -29,9 +31,13 @@ function create() {
     explosion.enableBody = true;
     explosion.scale.setTo(4,4);
     
-    explosion = game.add.sprite(150, 320, "explosion");
-    explosion.enableBody = true;
-    explosion.scale.setTo(4, 4);
+    explosion2 = game.add.sprite(150, 320, "explosion");
+    explosion2.enableBody = true;
+    explosion2.scale.setTo(4, 4);
+    
+    explosion3 = game.add.sprite(50, 320, "explosion");
+    explosion3.enableBody = true;
+    explosion3.scale.setTo(4, 4);
     
     platforms = game.add.group();
     platforms.enableBody = true;
@@ -56,6 +62,8 @@ function create() {
     player.animations.add('left', [0, 1, 2, 3], 10, true);
     player.animations.add('right', [5, 6, 7, 8], 10, true);
     explosion.animations.add("explode", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 10, false);
+    explosion2.animations.add("explode", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 10, false);
+    explosion3.animations.add("explode", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 10, false);
 
     stars = game.add.group();
 
@@ -121,6 +129,7 @@ function update() {
 function collectStar(player, star) {
     star.kill();
     explosion.animations.play("explode")
-    showText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fil: '#000'});
-    scoreText.text
+    explosion2.animations.play("explode")
+    explosion3.animations.play("explode")
+
 }
